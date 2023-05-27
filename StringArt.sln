@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringArt.ImageProcessor", "StringArt.ImageProcessor\StringArt.ImageProcessor.csproj", "{455E688D-1CC9-4E50-BF1B-C0C24041EB91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringArt.Console", "StringArt.Console\StringArt.Console.csproj", "{0800D3D5-4782-470D-9AAB-093C3B62FAB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringArt.Generator", "StringArt.Generator\StringArt.Generator.csproj", "{D309A4CA-4C3A-4F18-B597-43CC11D8DC0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{455E688D-1CC9-4E50-BF1B-C0C24041EB91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{455E688D-1CC9-4E50-BF1B-C0C24041EB91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{455E688D-1CC9-4E50-BF1B-C0C24041EB91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0800D3D5-4782-470D-9AAB-093C3B62FAB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0800D3D5-4782-470D-9AAB-093C3B62FAB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0800D3D5-4782-470D-9AAB-093C3B62FAB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0800D3D5-4782-470D-9AAB-093C3B62FAB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D309A4CA-4C3A-4F18-B597-43CC11D8DC0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D309A4CA-4C3A-4F18-B597-43CC11D8DC0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D309A4CA-4C3A-4F18-B597-43CC11D8DC0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D309A4CA-4C3A-4F18-B597-43CC11D8DC0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

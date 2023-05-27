@@ -13,8 +13,11 @@ public class ImageProcessor : IImageProcessor
 
     public Bitmap GetProcessedImage()
     {
-        ApplyGrayscale();
-        return new Bitmap(_bitmapImage);
+        var edgeDetector = new CannyEdgeDetector(_bitmapImage);
+        edgeDetector.Apply();
+        
+  
+        return new Bitmap(edgeDetector.EdgeMap);
     }
 
     private static Bitmap ByteArrayToBitmap(byte[] byteArray)
@@ -65,4 +68,24 @@ public class ImageProcessor : IImageProcessor
         }
     }
     
+    public Bitmap InvertBlackAndWhite(Bitmap image)
+    {
+        Bitmap invertedImage = new Bitmap(image.Width, image.Height);
+
+        for (int y = 0; y < image.Height; y++)
+        {
+            for (int x = 0; x < image.Width; x++)
+            {
+                Color pixelColor = image.GetPixel(x, y);
+
+                // Calculate the inverted color
+                Color invertedColor = Color.FromArgb(255 - pixelColor.R, 255 - pixelColor.G, 255 - pixelColor.B);
+
+                // Set the inverted color in the new image
+                invertedImage.SetPixel(x, y, invertedColor);
+            }
+        }
+
+        return invertedImage;
+    }
 }

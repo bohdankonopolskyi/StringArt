@@ -129,6 +129,7 @@ public class CannyEdgeDetector : IEdgeDetector
 
                 kernel[y + radius, x + radius] = weight;
                 kernelSum += weight;
+                Console.WriteLine("kernel");
             }
         }
 
@@ -213,12 +214,15 @@ public class CannyEdgeDetector : IEdgeDetector
 
                 if (gradient >= neighbor1 && gradient >= neighbor2)
                 {
+                    if (gradient > 255)
+                        gradient = 255;
                     suppressedImage.SetPixel(x, y, Color.FromArgb((int)gradient, (int)gradient, (int)gradient));
                 }
                 else
                 {
                     suppressedImage.SetPixel(x, y, Color.FromArgb(0, 0, 0));
                 }
+                
             }
         }
 
@@ -268,8 +272,7 @@ public class CannyEdgeDetector : IEdgeDetector
                 if (grayValue == 255)
                 {
                     edgeMap.SetPixel(x, y, Color.FromArgb(255, 255, 255));
-
-                    // Follow the edge using depth-first search
+                    
                     FollowEdge(x, y, edgeMap);
                 }
                 else
