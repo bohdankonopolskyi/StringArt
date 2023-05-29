@@ -1,6 +1,6 @@
 ﻿namespace StringArt.Generator;
 
-public class Nail
+public class Hook
 {
     public int Id { get; set; }
     public int X { get; set; }

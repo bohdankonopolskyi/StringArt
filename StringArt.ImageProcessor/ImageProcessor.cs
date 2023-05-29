@@ -88,4 +88,39 @@ public class ImageProcessor : IImageProcessor
 
         return invertedImage;
     }
+    
+    public List<Point> RasterizeLine(int x0, int y0, int x1, int y1)
+    {
+        var points = new List<Point>();
+
+        var dx = Math.Abs(x1 - x0);
+        var dy = Math.Abs(y1 - y0);
+        var sx = x0 < x1 ? 1 : -1;
+        var sy = y0 < y1 ? 1 : -1;
+        var err = dx - dy;
+
+        while (true)
+        {
+            points.Add(new Point(x0, y0));
+
+            if (x0 == x1 && y0 == y1)
+                break;
+
+            var err2 = 2 * err;
+
+            if (err2 > -dy)
+            {
+                err -= dy;
+                x0 += sx;
+            }
+
+            if (err2 < dx)
+            {
+                err += dx;
+                y0 += sy;
+            }
+        }
+
+        return points;
+    }
 }
